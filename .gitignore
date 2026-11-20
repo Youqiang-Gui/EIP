@@ -1,0 +1,38 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# Local credentials and editor state
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+*.log
+/core
+/core.*
+/local/
+
+# Downloaded models, training inputs, and generated output
+/checkpoints/
+/data/
+/datasets/
+/outputs/
+/wandb/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Website working files; keep the compressed web/ playback copies tracked
+/docs/.preview/
+/docs/assets/videos/*.mp4
+/docs/assets/videos/*.mov
+/docs/assets/videos/web/.build-state.json

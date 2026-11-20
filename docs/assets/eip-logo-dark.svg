@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="3 16 60 32" role="img" aria-labelledby="title">
+  <title id="title">EIP.</title>
+  <g fill="#f0f3f6">
+    <path d="M5 18h16v5H11v6h9v5h-9v7h10v5H5z"/>
+    <path d="M24 18h5v28h-5z"/>
+    <path fill-rule="evenodd" d="M32 18h9c7 0 11 4 11 10s-4 10-11 10h-3v8h-6z M38 23v9h3c3 0 5-1.5 5-4.5S44 23 41 23z"/>
+  </g>
+  <path d="M55 40h6v6h-6z" fill="#eb8b6e"/>
+</svg>

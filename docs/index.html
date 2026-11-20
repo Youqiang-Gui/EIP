@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151719">
+  <meta name="description" content="Embodied Interaction Policy (EIP): a unified model for full-duplex human–robot interaction, coupling streaming speech and continuous robot motion.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EIP — Embodied Interaction Policy">
+  <meta property="og:description" content="A Unified Model for Full-Duplex Human–Robot Interaction">
+  <meta property="og:image" content="https://youqiang-gui.github.io/EIP/assets/figures/teaser.png">
+  <title>EIP — Embodied Interaction Policy</title>
+  <link rel="icon" href="assets/favicon.svg?v=20261118-eip" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20261119-overview-title-layout">
+  <script src="site-config.js?v=38cfd5ab9beb" defer></script>
+  <script src="app.js?v=20261119-method-tabs" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#overview">Skip to content</a>
+  <div class="reading-progress" aria-hidden="true"><span></span></div>
+  <header class="site-header" id="site-header">
+    <a class="wordmark" href="#top" aria-label="EIP home">EIP<span aria-hidden="true">.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#overview">Overview</a>
+      <a href="#demos">Demos</a>
+      <a href="#abstract">Abstract</a>
+      <a href="#method">Method</a>
+      <a href="#bibtex">BibTeX</a>
+    </nav>
+    <a class="header-resource" data-link="code" href="https://github.com/Youqiang-Gui/EIP" target="_blank" rel="noopener">Code <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero-story" id="top" aria-labelledby="hero-title" data-section="Intro">
+      <div class="hero-stage">
+        <div class="hero-mosaic" id="hero-mosaic" aria-label="Four real-robot interaction video slots">
+          <div class="hero-cell" data-hero="0"><img src="assets/posters/crack-video.jpg?v=86b5a11c024a" alt="Astribot S1 proactively responding to a cracking sound" width="960" height="540" fetchpriority="high"></div>
+          <div class="hero-cell" data-hero="1"><img src="assets/posters/cough-video.jpg?v=24ec782277a1" alt="Astribot S1 proactively responding to a user's cough" width="960" height="540"></div>
+          <div class="hero-cell" data-hero="2"><img src="assets/posters/emotion-video.jpg?v=57af265d6dcc" alt="Emotion-aware human–robot interaction" width="960" height="540"></div>
+          <div class="hero-cell" data-hero="3"><img src="assets/posters/state-adaptation-video.jpg?v=9a9923bb2a75" alt="State adaptation, interruption and recovery with Astribot S1" width="960" height="540"></div>
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="hero-acronym" aria-hidden="true">EIP<span>.</span></p>
+          <h1 id="hero-title">Embodied Interaction Policy</h1>
+          <p class="hero-subtitle">A Unified Model for Full-Duplex Human–Robot Interaction</p>
+        </div>
+        <div class="hero-bottom">
+          <span class="sr-only" id="hero-status" role="status">Real-robot interactions · Muted loops</span>
+          <a class="scroll-cue" href="#overview">Scroll to explore <span aria-hidden="true">↓</span></a>
+          <button class="media-toggle" id="hero-toggle" type="button" hidden>Pause videos <span aria-hidden="true">Ⅱ</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="overview section-pad" id="overview" aria-labelledby="overview-title" data-section="Overview">
+      <div class="wrap">
+        <div class="publication reveal">
+          <p class="publication-brand"><img src="assets/eip-logo.svg" width="160" height="85" alt="EIP."></p>
+          <h2 id="overview-title">
+            <span>Embodied Interaction Policy:</span>
+            <span>A Unified Model for Full-Duplex Human–Robot Interaction</span>
+          </h2>
+          <div class="authors" aria-label="Authors">
+            <span class="author"><a href="https://openreview.net/profile?id=~Youqiang_Gui1" target="_blank" rel="noopener">Youqiang Gui</a><sup>1,2</sup></span>
+            <span class="author"><a href="https://openreview.net/profile?id=~Yunfei_Liu1" target="_blank" rel="noopener" aria-describedby="project-leader-note corresponding-authors-note">Yunfei Liu</a><sup>2,†,‡</sup></span>
+            <span class="author">Lijian Lin<sup>2</sup></span>
+            <span class="author">Ye Zhu<sup>2</sup></span>
+            <span class="author">Jianan Wang<sup>3</sup></span>
+            <span class="author" aria-describedby="corresponding-authors-note">Cheng Peng<sup>1,‡</sup></span>
+            <span class="author"><a href="https://openreview.net/profile?id=~Yu_Li4" target="_blank" rel="noopener">Yu Li</a><sup>2</sup></span>
+          </div>
+          <div class="affiliations" aria-label="Author affiliations">
+            <span><sup>1</sup> Sichuan University</span>
+            <span><sup>2</sup> International Digital Economy Academy (IDEA)</span>
+            <span><sup>3</sup> Astribot</span>
+          </div>
+          <div class="author-notes" id="author-notes"><span id="project-leader-note">† Project leader</span><span id="corresponding-authors-note">‡ Corresponding authors</span></div>
+          <div class="publication-links">
+            <a class="pill pill-dark" id="arxiv-link" data-link="arxiv" hidden target="_blank" rel="noopener">arXiv <span aria-hidden="true">↗</span></a>
+            <span class="pill pill-pending" id="arxiv-pending" aria-label="arXiv link coming soon">arXiv <span>Coming soon</span></span>
+            <a class="pill" data-link="code" href="https://github.com/Youqiang-Gui/EIP" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></svg>Code <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <figure class="paper-figure overview-figure reveal">
+          <a class="figure-link" href="assets/figures/teaser.pdf" target="_blank" rel="noopener" aria-label="Open Figure 1 as PDF">
+            <img src="assets/figures/teaser.png" width="1539" height="647" alt="EIP couples interaction and motion experts, enabling emotion-aware gestures, proactive responses, state adaptation, and interruption and recovery." loading="lazy">
+            <span class="expand-figure" aria-hidden="true">↗</span>
+          </a>
+          <figcaption><span>Figure 1.</span> (a) We propose Embodied Interaction Policy (EIP), which is a unified streaming architecture that
+          couples interaction and motion experts for
+          speech--motion alignment.
+          EIP enables diverse interaction scenarios,
+          including (b) emotion-aware gesture generation,
+          (c) proactive response,
+          (d) seamless state adaptation, and
+          (e) fast reaction to user interruption
+          and task recovery.</figcaption>
+        </figure>
+        <aside class="overview-summary reveal" aria-labelledby="overview-summary-title">
+          <h3 id="overview-summary-title">TL;DR</h3>
+          <p>EIP couples an audio interaction model with a motion generation model to coordinate speech and robot motion in real time. This unified framework continuously generates natural movements aligned with conversational states and emotions during full-duplex interactions, including proactive responses and user interruptions.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="demos section-pad" id="demos" aria-labelledby="demos-title" data-section="Demos">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <h2 class="section-title" id="demos-title">Demonstrations</h2>
+          <p class="section-aside"></p>
+        </div>
+        <div class="demo-group-heading real-world-heading reveal"><span>Astribot S1</span><h3>Real-world interaction</h3></div>
+        <div class="demo-grid" id="real-demos"></div>
+        <div class="demo-group-heading simulation-heading reveal"><h3>Simulation</h3></div>
+        <div class="demo-grid" id="sim-demos"></div>
+        <p class="demo-note reveal"></p>
+        <noscript><p>Enable JavaScript to view the demonstration videos.</p></noscript>
+      </div>
+    </section>
+
+    <section class="abstract section-pad" id="abstract" aria-labelledby="abstract-title" data-section="Abstract">
+      <div class="wrap abstract-layout">
+        <div class="abstract-heading reveal"><h2 class="section-title" id="abstract-title">Abstract</h2></div>
+        <div class="abstract-copy reveal">
+          <p>Real-time human-robot social interaction requires continuous coordination between speech and physical behavior. Existing systems often separate interaction agents from motion generation, complicating coordination as conversational states change. We propose <strong>Embodied Interaction Policy (EIP)</strong>, a unified streaming framework that couples an Audio-Interaction expert with a motion expert through layer-wise joint attention. This allows motion generation to directly access the evolving interaction context.</p>
+          <p>A chunk-wise causal mask prevents access to future context, while a vocal token encodes speaking state and the semantic emotion of the response. We construct Embodied Interaction Dataset (EI-Data) from co-speech and dyadic interaction data and train our model in two stages to learn state-adaptive and emotion-conditioned behavior. Combined with the frozen interaction expert, EIP supports continuous robot motion during proactive responses and interruption-aware turn-taking.</p>
+          <p>Quantitative evaluations demonstrate improved motion quality over representative gesture-generation baselines. Compared with a representative cascaded system, EIP achieves higher interaction success and reduces warm-start latency by <strong>64%</strong>. Physical deployment and user studies further demonstrate improved motion naturalness and interaction comfort.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="method section-pad" id="method" aria-labelledby="method-title" data-section="Method">
+      <div class="wrap">
+        <div class="section-heading reveal"><h2 class="section-title" id="method-title">Method</h2><p class="section-aside"></p></div>
+        <div class="method-interactive" id="method-interactive">
+          <div class="contributions">
+            <div class="contribution-heading reveal">
+              <h3 class="contribution-label" id="contributions-title">Contributions</h3>
+              <button class="method-rotation" id="method-rotation" type="button" aria-controls="architecture" hidden>Pause slideshow</button>
+            </div>
+            <ol class="contribution-list" role="tablist" aria-labelledby="contributions-title">
+              <li class="reveal" role="presentation">
+                <button class="contribution-tab" id="contribution-tab-1" type="button" role="tab" aria-selected="true" aria-controls="method-panel-1" aria-labelledby="contribution-title-1" aria-describedby="contribution-description-1" tabindex="0">
+                  <span class="contribution-number" aria-hidden="true">1.</span>
+                  <span class="contribution-copy"><span class="contribution-title" id="contribution-title-1">A unified interaction–motion policy</span><span class="contribution-description" id="contribution-description-1">The hidden states of an interaction expert provide rich context for robot motion. EIP couples interaction and motion experts through layer-wise attention to coordinate streaming speech and continuous robot motion.</span></span>
+                </button>
+              </li>
+              <li class="reveal" role="presentation">
+                <button class="contribution-tab" id="contribution-tab-2" type="button" role="tab" aria-selected="false" aria-controls="method-panel-2" aria-labelledby="contribution-title-2" aria-describedby="contribution-description-2" tabindex="-1">
+                  <span class="contribution-number" aria-hidden="true">2.</span>
+                  <span class="contribution-copy"><span class="contribution-title" id="contribution-title-2">Causal, state- and emotion-aware generation</span><span class="contribution-description" id="contribution-description-2">A chunk-wise causal mask preserves causality in streaming motion generation. A vocal token encodes speaking state and response emotion for state-appropriate, expressive physical behavior.</span></span>
+                </button>
+              </li>
+              <li class="reveal" role="presentation">
+                <button class="contribution-tab" id="contribution-tab-3" type="button" role="tab" aria-selected="false" aria-controls="method-panel-3" aria-labelledby="contribution-title-3" aria-describedby="contribution-description-3" tabindex="-1">
+                  <span class="contribution-number" aria-hidden="true">3.</span>
+                  <span class="contribution-copy"><span class="contribution-title" id="contribution-title-3">EI-Data and real-world deployment</span><span class="contribution-description" id="contribution-description-3">We construct EI-Data for training and evaluating embodied interaction and deploy EIP on the Astribot S1. Quantitative experiments and user studies evaluate motion quality, interaction success, latency, and user experience.</span></span>
+                </button>
+              </li>
+            </ol>
+          </div>
+          <div class="method-figure method-panels reveal" id="architecture">
+            <figure class="paper-figure method-panel is-active" id="method-panel-1" role="tabpanel" aria-labelledby="contribution-tab-1">
+              <a class="figure-link" href="assets/figures/pipeline.pdf" target="_blank" rel="noopener" aria-label="Open Figure 3 as PDF">
+                <span class="method-image-frame"><img src="assets/figures/pipeline.png" width="2400" height="1014" alt="Figure 3 shows streaming audio entering the interaction expert, time-aligned TTS, shared attention with a motion expert, and vocal tokens conditioning continuous robot motion." loading="lazy" decoding="async"></span>
+                <span class="expand-figure" aria-hidden="true">↗</span>
+              </a>
+              <figcaption><span>Figure 3.</span> Overview of the EIP framework. EIP consists of a pretrained interaction expert that processes streaming audio and models the evolving interaction
+        context, together with a motion expert that generates continuous and synchronized robot motions.</figcaption>
+            </figure>
+            <figure class="paper-figure method-panel" id="method-panel-2" role="tabpanel" aria-labelledby="contribution-tab-2" aria-hidden="true" inert>
+              <a class="figure-link" href="assets/figures/mask.pdf" target="_blank" rel="noopener" aria-label="Open the causal attention mask as PDF">
+                <span class="method-image-frame"><img src="assets/figures/mask.png" width="2400" height="1770" alt="Chunk-wise causal attention mask showing visible and masked relationships among context chunks, robot-state tokens, vocal tokens, and motion tokens." loading="lazy" decoding="async"></span>
+                <span class="expand-figure" aria-hidden="true">↗</span>
+              </a>
+              <figcaption>Chunk-wise causal attention mask over context, robot-state, vocal, and motion tokens, restricting access to future context.</figcaption>
+            </figure>
+            <figure class="paper-figure method-panel" id="method-panel-3" role="tabpanel" aria-labelledby="contribution-tab-3" aria-hidden="true" inert>
+              <a class="figure-link" href="assets/figures/data-process.pdf" target="_blank" rel="noopener" aria-label="Open the EI-Data processing pipeline as PDF">
+                <span class="method-image-frame"><img src="assets/figures/data-process.png" width="2400" height="1318" alt="EI-Data processing pipeline: source datasets, SMPL-X conversion, coordinate and temporal normalization, SOMA fitting, robot inverse kinematics, and export of motion, audio, transcripts, and tags." loading="lazy" decoding="async"></span>
+                <span class="expand-figure" aria-hidden="true">↗</span>
+              </a>
+              <figcaption>EI-Data processing pipeline: normalizing source data, fitting motion to SOMA, and retargeting it to robots before exporting motion, audio, transcripts, and tags.</figcaption>
+            </figure>
+          </div>
+          <p class="sr-only" id="method-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="citation section-pad" id="bibtex" aria-labelledby="bibtex-title" data-section="BibTeX">
+      <div class="wrap citation-layout">
+        <div class="citation-heading reveal"><h2 class="section-title" id="bibtex-title">BibTeX</h2><p class="citation-note" id="citation-note">Publication details will be added with the paper release.</p></div>
+        <div class="citation-box reveal"><div class="citation-toolbar"><span>eip.bib <span class="draft-label" id="citation-draft">Draft</span></span><button type="button" id="copy-bibtex">Copy BibTeX <span aria-hidden="true">⧉</span></button></div><pre tabindex="0" aria-label="BibTeX citation template"><code id="bibtex-code">@misc{eip,
+  title  = {Embodied Interaction Policy: A Unified Model
+            for Full-Duplex Human--Robot Interaction},
+  author = {Gui, Youqiang and Liu, Yunfei and Lin, Lijian
+            and Zhu, Ye and Wang, Jianan and Peng, Cheng
+            and Li, Yu},
+  note   = {Publication details forthcoming}
+}</code></pre><p class="sr-only" id="copy-status" role="status" aria-live="polite"></p></div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><a class="wordmark" href="#top">EIP<span aria-hidden="true">.</span></a><p>Embodied Interaction Policy</p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+EIP: Embodied Interaction Policy
+Copyright 2026 EIP authors.
+
+This project includes code adapted from AudioInteraction and Lightning AI's
+LitGPT. Existing copyright notices are retained in the source files.
+The RMSNorm implementation in src/audiointeraction/model.py identifies
+Biao Zhang's RMSNorm as its source and retains its BSD-3-Clause attribution.
+
+See THIRD_PARTY_NOTICES.md and licenses/ for upstream references and license texts.
