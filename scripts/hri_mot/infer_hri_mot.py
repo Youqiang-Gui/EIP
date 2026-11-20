@@ -329,7 +329,7 @@ def parse_args() -> argparse.Namespace:
         help=(
             "streaming_latest matches web/infer_wav.py: keep a PCM history queue, "
             "re-encode accumulated audio, and use the newest 10 audio tokens. "
-            "independent_first keeps the older HRI inference behavior."
+            "independent_first encodes each chunk separately and uses its first 10 audio tokens."
         ),
     )
     parser.add_argument(
@@ -339,7 +339,7 @@ def parse_args() -> argparse.Namespace:
         help=(
             "Process the complete episode waveform once before replaying 400 ms chunks. "
             "none matches web/infer_wav.py and keeps the whisper-decoded samples unchanged; "
-            "the RMS modes are retained only for explicit ablation runs."
+            "the RMS modes normalize waveform amplitude."
         ),
     )
     parser.add_argument(
@@ -460,8 +460,8 @@ def load_checkpoint_train_args(
     param_names = tuple(str(name) for name in params)
     if any("motion_intensity_" in name for name in param_names):
         raise RuntimeError(
-            "Legacy low/high conditioning checkpoint is incompatible with six emotions. "
-            "Train Stage II from an unconditioned Stage-I checkpoint."
+            "Checkpoint conditioning is incompatible with the six-emotion model. "
+            "Use a Stage-I or six-emotion Stage-II checkpoint."
         )
     for name, tensor in params.items():
         if str(name).endswith("emotion_embedding.weight"):
@@ -476,8 +476,7 @@ def load_checkpoint_train_args(
     ]
     if unsupported_names:
         raise RuntimeError(
-            "This checkpoint uses a removed emotion/motion experimental "
-            "architecture and is no longer supported: "
+            "Checkpoint contains unsupported emotion-conditioning parameters: "
             f"{unsupported_names[:4]}"
         )
 

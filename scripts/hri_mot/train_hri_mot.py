@@ -294,7 +294,7 @@ def parse_args() -> argparse.Namespace:
         default="whisper",
         help=(
             "whisper decodes/resamples each complete source wav to mono float32 at 16 kHz "
-            "before 400 ms slicing, matching Web inference. native keeps the old dataset loader."
+            "before 400 ms slicing. native uses the dataset's audio loader."
         ),
     )
     parser.add_argument(
@@ -304,7 +304,7 @@ def parse_args() -> argparse.Namespace:
         help=(
             "episode_contiguous concatenates the selected episode chunks, runs one full-waveform "
             "mel/audio-tower pass, then slices consecutive groups of 10 features. "
-            "independent_chunk keeps the old per-400-ms feature extraction for ablations."
+            "independent_chunk extracts features separately for each 400 ms chunk."
         ),
     )
     args = parser.parse_args()

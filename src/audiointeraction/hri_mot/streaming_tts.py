@@ -158,9 +158,7 @@ def _unit_weight(unit: str) -> float:
 def estimate_text_audio_spans(text: str, pcm_samples: int) -> List[TextAudioSpan]:
     """Allocate text units over an existing waveform using linguistic weights.
 
-    This is an explicit fallback, not a claimed forced alignment.  Backends may
-    replace these spans with real character/word timestamps without changing
-    the playback scheduler or action inference code.
+    Used when the TTS backend does not provide character or word timestamps.
     """
 
     text = str(text)
